@@ -4,10 +4,6 @@
 	Layout = "master.cshtml";
 }
 
-<!-- Jumbotron, w title -->
-<div class="jumbotron text-center jumbotron-fluid">
-	<div class="container">
-		<h1 class="display-1">@Model.Value("title")</h1>
-		<p>And this is <span class="font-weight-bold">only</span> the beginning.</p>
-	</div>
-</div>
+<section>
+	@await Html.PartialAsync("_Hero")
+</section>
