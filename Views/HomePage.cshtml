@@ -1,7 +1,13 @@
 ﻿@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 @{
-	Layout = null;
+	Layout = "master.cshtml";
 }
 
-<h1>Hello world</h1>
+<!-- Jumbotron, w title -->
+<div class="jumbotron text-center jumbotron-fluid">
+	<div class="container">
+		<h1 class="display-1">@Model.Value("title")</h1>
+		<p>And this is <span class="font-weight-bold">only</span> the beginning.</p>
+	</div>
+</div>
