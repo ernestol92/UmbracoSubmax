@@ -12,7 +12,6 @@
     display: grid;
     grid-template-rows: auto 1fr auto;
     height: 100vh;
-    max-width: 80%;
     overflow:hidden;
 }
 
@@ -68,20 +67,28 @@
 .hero-wrapper {
     position: relative;
     width: 100%;
-    height: 70svh;
+    height:70vh; 
     overflow: hidden;
     
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.hero-carousel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 1000ms ease-in-out;
+    
+}
+
 .hero-bg {
-    position: absolute;
+    flex: 0 0 100%;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: 70% 80%;
-    /*top: -0px;*/
     z-index: 1;
     mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
     -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
