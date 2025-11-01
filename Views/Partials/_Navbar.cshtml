@@ -1,12 +1,17 @@
-﻿@* navbar *@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
 <div class="disp-flex-row navbar">
 	<div class="logo-div">
-		<img class="navbar-logo" src="~/images/Logo/LOGOTYPE TEXT.svg" alt="submax logo" />
+		<a href="/">
+			<img class="navbar-logo" src="~/images/Logo/LOGOTYPE TEXT.svg" alt="submax logo" />
+		</a>
+		
 	</div>
 	<div class="disp-flex-row navbar-items">
-		<a href="#">Produtos</a>
-		<a href="#">Sobre nos</a>
-		<a href="#">Contato</a>
+		<a href="/produtos">Produtos</a>
+		<a href="/sobrenos">Sobre nos</a>
+		<a href="/contato">Contato</a>
 
 	</div>
 </div>

@@ -4,9 +4,6 @@
 	Layout = "master.cshtml";
 }
 
-<section>
-	@await Html.PartialAsync("_Hero")
-    @await Html.PartialAsync("_Services")
-    
-
-</section>
+@await Html.PartialAsync("_ExampleBanner")
+@await Html.PartialAsync("_ProductGrid")
+@await Html.PartialAsync("_Showcase")

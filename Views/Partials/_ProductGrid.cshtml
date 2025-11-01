@@ -1,0 +1,36 @@
+﻿@using Umbraco.Cms.Core.Models.Blocks
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+	var cards = Model.Value<IEnumerable<BlockListItem>>("productCards");
+}
+
+@if(cards !=null)
+{
+	<div class="product-grid">
+		@foreach (var card in cards)
+		{
+		var link = card.Content.Value("cardLink");
+		var image = card.Content.Value<MediaWithCrops>("cardImage");
+		var title = card.Content.Value("cardTitle");
+		var text = card.Content.Value("cardText");
+		var price = card.Content.Value("cardPrice");
+
+		<a class="product-card" href="@link">
+			<div class="top-group">
+				@if (image != null)
+				{
+					<img class="product-card-img" src="@image?.Url()" alt="Alternate Text" />
+				}
+				<h2>@title</h2>
+				<p>@text</p>
+			</div>
+
+			<h3>@price</h3>
+		</a>
+		}
+	</div>
+	
+}

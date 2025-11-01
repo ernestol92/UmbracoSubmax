@@ -1,22 +1,56 @@
-﻿<div class="showcase-wrapper">
+﻿@using Umbraco.Cms.Core.Models.Blocks
+@using Umbraco.Cms.Web.Common.PublishedModels;
+@using Umbraco.Cms.Core.Models;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
 
-	<div class="showcase-div">
-		<div class="img-container">
-			<img class="showcase-img" src="~/images/clinimater.jpg" alt="Alternate Text" />
+@{
+	var showcaseCards = Model.Value<IEnumerable<BlockListItem>>("showcaseCards");
+	var index = 0;
+}
+
+@if (showcaseCards != null) 
+{
+	<div class="showcase-wrapper">
+
+		@foreach (var card in showcaseCards) 
+		{
+			var image = card.Content.Value<MediaWithCrops>("image");
+			var text = card.Content.Value("text");
+			var person = card.Content.Value("person");
+
+			var oddEven = index % 2 != 0;
+
+			<div class="@(oddEven ? "showcase-div" : "reverse")">
+					<div>
+						<img class="showcase-img" src="@image?.Url()" alt="Alternate Text" />
+					</div>
+
+					<div class="showcase-text">
+						<p>@text<br /><small>- @person</small></p>
+						@* <p>We loved the quality of the fabrics its really soft to the touch and it was easy to get started <br /> <small>- Clinimater</small></p> *@
+					</div>
+				</div>
+			index++;
+		}
+
+		@* <div class="showcase-div">
+			<div class="img-container">
+				<img class="showcase-img" src="~/images/clinimater.jpg" alt="Alternate Text" />
+			</div>
+
+			<div class="showcase-text">
+				<p>We loved the quality of the fabrics its really soft to the touch and it was easy to get started <br /> <small>- Clinimater</small></p>
+			</div>
 		</div>
-		
-		<div class="showcase-text">
-			<p>We loved the quality of the fabrics its really soft to the touch and it was easy to get started <br /> <small>- Clinimater</small></p>
-		</div>
+
+		<div class="reverse">
+			<div>
+				<img class="showcase-img" src="~/images/dom.jpg" alt="Alternate Text" />
+			</div>
+
+			<div class="showcase-text">
+				<p>We loved the quality of the fabrics its really soft to the touch and it was easy to get started <br /> <small>- Dom Cabral</small></p>
+			</div>
+		</div> *@
 	</div>
-
-	<div class="reverse">
-		<div>
-			<img class="showcase-img" src="~/images/dom.jpg" alt="Alternate Text" />
-		</div>
-
-		<div class="showcase-text">
-			<p>We loved the quality of the fabrics its really soft to the touch and it was easy to get started <br /> <small>- Clinimater</small></p>
-		</div>
-	</div>
-</div>
+}

@@ -1,20 +1,45 @@
-﻿<section>
-	<div class="hero-wrapper">
-		<div class="hero-carousel">
-			<img class="hero-bg" src="~/images/ChatGPT Image 24 okt. 2025 19_10_13.png" alt="Alternate Text" />
-			<img class="hero-bg" src="~/images/trilha.png" alt="Alternate Text" />
-			<img class="hero-bg" src="~/images/items.png" alt="Alternate Text" />
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@using Umbraco.Cms.Core.Models.Blocks;
+@using Umbraco.Cms.Core.Models;
 
-		</div>
-		<div class="hero-content">
-			<h1 class="hero-h1">Levando você do Sub ao Max</h1>
-			<p class="hero-p">Impressões por sublimação de alta qualidade, com cores vibrantes e durabilidade excepcional.</p>
-			<div class="hero-links">
-				<a href="#">Compre Agora</a>
-				<a href="#">Comece Seu Design</a>
-			</div>
-		</div>
-	</div>
+@{
+    var sections = Model.Value<IEnumerable<BlockListItem>>("sections");
+}
 
-	<script src="/js/hero.js" asp-append-version="true"></script>
-</section>
+@if (sections != null)
+{
+    foreach (var section in sections)
+    {
+        if (section.Content.ContentType.Alias == "heroSection")
+        {
+            var title = section.Content.Value("heroTitle");
+            var text = section.Content.Value("herotext");
+            var images = section.Content.Value<IEnumerable<MediaWithCrops>>("heroBgImage");
+            <section class="hero">
+                <div class="hero-wrapper">
+                    <div class="hero-carousel">
+                        @if (images != null)
+                        {
+                            foreach (var image in images)
+                            {
+                                <img class="hero-bg" src="@image?.Url()" alt="@image?.Name" />
+                            }
+                        }
+                    </div>
+
+                    <div class="hero-content">
+                        <h1 class="hero-h1">@title</h1>
+                        <p class="hero-p">@text</p>
+                        <div class="hero-links">
+                            <a href="https://localhost:44396/produtos">Compre Agora</a>
+                            <a href="#">Comece Seu Design</a>
+                        </div>
+                    </div>
+                </div>
+
+                <script src="/js/hero.js" asp-append-version="true"></script>
+            </section>
+        }
+    }
+}

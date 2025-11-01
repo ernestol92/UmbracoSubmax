@@ -1,22 +1,28 @@
-﻿<section class="services">
-  <h2 class="services-title">O que fazemos</h2>
-  <div class="services-grid">
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+<section class="services">
     <div class="service">
-      <img src="~/images/Icons/shirt.svg" alt="Camisetas Personalizadas" class="service-icon">
-      <h3>Camisetas</h3>
-      <p>Impressões por sublimação com cores vibrantes e longa durabilidade.</p>
+        <img src="/images/Icons/cap.svg" alt="Boné personalizado" />
+        <h3>Bonés</h3>
+        <p>Estilo e identidade com patch de neoprene exclusivo.</p>
     </div>
 
     <div class="service">
-      <img src="~/images/Icons/mug.svg" alt="Canecas Personalizadas" class="service-icon">
-      <h3>Canecas</h3>
-      <p>Personalize suas canecas com nomes, frases ou artes exclusivas.</p>
+        <img src="/images/Icons/mug.svg" alt="Caneca personalizada" />
+        <h3>Canecas</h3>
+        <p>Impressões duráveis para presentes e lembranças.</p>
     </div>
 
     <div class="service">
-      <img src="~/images/Icons/cap.svg" alt="Design Personalizado" class="service-icon">
-            <h3>Bonés</h3>
-      <p>Criamos ou ajustamos seu design para que o resultado saia perfeito.</p>
+        <img src="/images/Icons/shirt.svg" alt="Camiseta personalizada" />
+        <h3>Camisetas</h3>
+        <p>Alta qualidade e conforto, ideais para o dia a dia.</p>
     </div>
-  </div>
+
+    <div class="service">
+        <img src="/images/Icons/ecobag.svg" alt="Ecobag personalizada" />
+        <h3>Ecobags</h3>
+        <p>Sustentáveis, práticas e com estampas exclusivas.</p>
+    </div>
 </section>
