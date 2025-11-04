@@ -3,60 +3,65 @@
 @{
 	Layout = "master.cshtml";
 }
-@* /////////Contact Hero ////////////// *@
-<section>
-	<div>
-		<div class="text-align">
-			<h1>Fale com a Submax</h1>
-			<strong>Tire dúvidas, peça orçamentos e envie seus designs. <br /> Estamos prontos pra ajudar.</strong>
-		</div>
-	</div>
-</section>
-@* ////////////Contact ways//////// *@
-<section>
-	<div>
-		<div class="means-of-contact">
-			<p class="contact"><img src="~/images/Icons/mug.svg" alt="Alternate Text" />WhatsApp: (82) 99660-6790</p>
-			<p class="contact"><img src="~/images/Icons/mug.svg" alt="Alternate Text" />Email: contato@submax.com</p>
-			<p class="contact"><img src="~/images/Icons/mug.svg" alt="Alternate Text" />Instagram: @@submax_oficial</p>
-			<p class="contact"><img src="~/images/Icons/mug.svg" alt="Alternate Text" />Rua Eliane Guimaraes 358, <br /> Santana do Ipanema – AL</p>
-		</div>
-	</div>
-</section>
-@* /////////////Contact Form/////////////// *@
-<section>
-	<div class="contact-bg">
-		<div class="means-of-contact">
-			<label for="nome">Nome</label>
-			<input class="input-field" type="text" id="nome" value="" placeholder="Nome" />
 
-			<label for="mensagem">Mensagem</label>
-			<textarea class="input-field" id="mensagem" rows="5" placeholder=" Mensagem"></textarea>
-
-			<label for="interesse">Produto de interesse</label>
-			<input class="input-field" type="text" id="interesse" value="" placeholder="Produto de interesse" />
-
-			<a class="btn-whatsapp" href="#">
-				Enviar via whatsapp
-			</a>
+<section>
+	@* /////////Contact Hero ////////////// *@
+	<section>
+		<div>
+			<div class="text-align">
+				<h1 class="mb-1">Fale com a Submax</h1>
+				<strong>Tire dúvidas, peça orçamentos e envie seus designs. <br /> Estamos prontos pra ajudar.</strong>
+			</div>
 		</div>
-	</div>
+	</section>
+	@* ////////////Contact ways//////// *@
+	<section>
+		<div>
+			<div class="means-of-contact">
+				<a href="https://wa.me/message/GBTQVS3EG6K5I1" class="contact"><img src="~/images/Icons/mug.svg" alt="Alternate Text" />WhatsApp: (82) 99660-6790</a>
+				<a href="mailto:ernestol92@hotmail.com" class="contact"><img src="~/images/Icons/mug.svg" alt="Alternate Text" />Email: Ernestol92@hotmail.com</a>
+				<a class="contact"><img src="~/images/Icons/mug.svg" alt="Alternate Text" />Instagram: @@submax_oficial</a>
+				<a class="contact"><img src="~/images/Icons/mug.svg" alt="Alternate Text" />Rua Eliane Guimaraes 358, <br /> Santana do Ipanema – AL</a>
+			</div>
+		</div>
+	</section>
+	@* /////////////Contact Form/////////////// *@
+	<section>
+		<div class="contact-bg">
+			<div class="means-of-contact">
+				<label for="nome">Nome</label>
+				<input class="input-field" type="text" id="nome" value="" placeholder="Nome" />
+
+				<label for="mensagem">Mensagem</label>
+				<textarea class="input-field" id="mensagem" rows="5" placeholder=" Mensagem"></textarea>
+
+				<label for="interesse">Produto de interesse</label>
+				<input class="input-field" type="text" id="interesse" value="" placeholder="Produto de interesse" />
+
+				<a class="btn-whatsapp" href="#" target="_blank">
+					Enviar via whatsapp
+				</a>
+			</div>
+		</div>
 	
-</section>
-@* /////////////////Google map/Open Hours////////////////// *@
-<div class="means-of-contact">
-	<h2>Local</h2>
-	<div class="map-container">
+	</section>
+	@* /////////////////Google map/Open Hours////////////////// *@
+	<div class="means-of-contact">
+		<h2>Local</h2>
+		<div class="map-container">
 		
-		<iframe
-			src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d303.06514055230633!2d-37.2529295785389!3d-9.364809049460206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70621d56b3d7445%3A0x9d95c90eef65224!2sR.%20Bela%20Vista%2C%20358%2C%20Santana%20do%20Ipanema%20-%20AL%2C%2057500-000!5e1!3m2!1ssv!2sbr!4v1762034559435!5m2!1ssv!2sbr"
-			width="600"
-			height="450" 
-			style="border:0;" 
-			allowfullscreen="" 
-			loading="lazy" 
-			referrerpolicy="no-referrer-when-downgrade">
-		</iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d287.01300921952776!2d-37.2529498450263!3d-9.364882129402313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x70621d56b3d7445%3A0x9d95c90eef65224!2sR.%20Bela%20Vista%2C%20358%2C%20Santana%20do%20Ipanema%20-%20AL%2C%2057500-000!5e0!3m2!1ssv!2sbr!4v1762116196394!5m2!1ssv!2sbr"
+				width="600" 
+				height="450" 
+				style="border:0;" 
+				allowfullscreen="" 
+				loading="lazy" 
+				referrerpolicy="no-referrer-when-downgrade">
+			</iframe>
+		</div>
+		<strong class="mb-1">Horários de funcionamento: Seg–Sex, 9h às 17h</strong>
 	</div>
-	<strong>Horários de funcionamento: Seg–Sex, 9h às 17h</strong>
-</div>
+
+
+	<script src="/js/contact.js"></script>
+</section>
